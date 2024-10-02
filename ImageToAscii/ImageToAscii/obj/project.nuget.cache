@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "+5ETuHTcvAFXHNaQxP8gOECek6HOACxjHiAyLO1E2Fo7as4j6nRlRuDzjJh2qR4IOLgW3CyDrpMNuvXtrV++gw==",
+  "success": true,
+  "projectFilePath": "C:\\ImageToAscii\\ImageToAscii\\ImageToAscii\\ImageToAscii.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Tore\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0\\microsoft.win32.systemevents.8.0.0.nupkg.sha512",
+    "C:\\Users\\Tore\\.nuget\\packages\\system.drawing.common\\8.0.8\\system.drawing.common.8.0.8.nupkg.sha512"
+  ],
+  "logs": []
+}
