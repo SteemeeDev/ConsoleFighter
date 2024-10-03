@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "h1ZKTCFcvNsfVSS4jM47BSoY41xmW9X6DRIn9g3gtBqbIyxHzkQOiJuuT08KQC9jfae0XOsI9QYVSR6y3MH+2Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\biscu\\Downloads\\ImageToAscii-main\\ImageToAscii-main\\ImageToAscii\\ImageToAscii\\ImageToAscii.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\biscu\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0\\microsoft.win32.systemevents.8.0.0.nupkg.sha512",
+    "C:\\Users\\biscu\\.nuget\\packages\\system.drawing.common\\8.0.8\\system.drawing.common.8.0.8.nupkg.sha512"
+  ],
+  "logs": []
+}
