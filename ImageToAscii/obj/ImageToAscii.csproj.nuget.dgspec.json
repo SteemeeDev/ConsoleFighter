@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\biscu\\Downloads\\ImageToAscii-main\\ImageToAscii-main\\ImageToAscii\\ImageToAscii\\ImageToAscii.csproj": {}
+    "C:\\ImageToAscii\\ImageToAscii\\ImageToAscii.csproj": {}
   },
   "projects": {
-    "C:\\Users\\biscu\\Downloads\\ImageToAscii-main\\ImageToAscii-main\\ImageToAscii\\ImageToAscii\\ImageToAscii.csproj": {
+    "C:\\ImageToAscii\\ImageToAscii\\ImageToAscii.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\biscu\\Downloads\\ImageToAscii-main\\ImageToAscii-main\\ImageToAscii\\ImageToAscii\\ImageToAscii.csproj",
+        "projectUniqueName": "C:\\ImageToAscii\\ImageToAscii\\ImageToAscii.csproj",
         "projectName": "ImageToAscii",
-        "projectPath": "C:\\Users\\biscu\\Downloads\\ImageToAscii-main\\ImageToAscii-main\\ImageToAscii\\ImageToAscii\\ImageToAscii.csproj",
-        "packagesPath": "C:\\Users\\biscu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\biscu\\Downloads\\ImageToAscii-main\\ImageToAscii-main\\ImageToAscii\\ImageToAscii\\obj\\",
+        "projectPath": "C:\\ImageToAscii\\ImageToAscii\\ImageToAscii.csproj",
+        "packagesPath": "C:\\Users\\Tore\\.nuget\\packages\\",
+        "outputPath": "C:\\ImageToAscii\\ImageToAscii\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\biscu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tore\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

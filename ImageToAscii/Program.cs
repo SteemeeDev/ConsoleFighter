@@ -7,18 +7,25 @@ Getfullpath removes ..\
 ..\ means go up folder
 GetCurrenctDirectory gives the directory of the executable, not the project
 */
+
 string path = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\"));
+#if RELEASE
+    //Console.WriteLine("Release mode on!");
+    path = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"Images"));
+#endif
+
 
 Console.WriteLine("PATH: " + path);
 
 
 while (true)
 {
-    Console.WriteLine("Give filename, press enter for default");
+    Console.WriteLine("Enter filename, press enter for default: ");
 
     string input = Console.ReadLine();
     if (input == "")
     {
+        Console.WriteLine("Choosing duck image");
         input = "Duck.bmp";
     }
     else
@@ -39,10 +46,14 @@ while (true)
     try
     {
         resolution = int.Parse(res);
+        if (resolution > image.Width || resolution > image.Height) {
+            Console.WriteLine("Invalid resoution! Resolution is bigger than image size!");
+            continue;
+        }
     }
     catch (FormatException)
     {
-        Console.WriteLine("Invalid Resolution! Using default of "+resolution);
+        Console.WriteLine("Invalid Resolution! Using default of " + resolution);
     }
 
     Dictionary<float, char> lumToChar = new Dictionary<float, char>() {
