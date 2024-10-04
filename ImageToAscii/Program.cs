@@ -1,21 +1,17 @@
-﻿using System.Drawing;
-using System.Drawing.Text;
-using System.IO;
+﻿using System.Diagnostics;
+using System.Drawing;
+//using System.Drawing.Text;
+
 /*
-Getfullpath removes ..\
 @"" means literal string
 ..\ means go up folder
 GetCurrenctDirectory gives the directory of the executable, not the project
 */
 
-string path = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\"));
-#if RELEASE
-    //Console.WriteLine("Release mode on!");
-    path = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"Images"));
-#endif
-
+string path = Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\Images");
 
 Console.WriteLine("PATH: " + path);
+
 
 
 while (true)
@@ -63,7 +59,7 @@ while (true)
     {0.6f,'&' },
     {0.8f,'#'},
     {1f, '■'}
-};
+    };
 
 
     void ShowImgInConsole(Bitmap img)
