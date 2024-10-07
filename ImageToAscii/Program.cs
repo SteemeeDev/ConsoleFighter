@@ -1,89 +1,79 @@
-﻿using System.Diagnostics;
-using System.Drawing;
-//using System.Drawing.Text;
-
-/*
-@"" means literal string
-..\ means go up folder
-GetCurrenctDirectory gives the directory of the executable, not the project
-*/
-
-string path = Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\Images");
-
-Console.WriteLine("PATH: " + path);
+﻿using System.Drawing;
+using System.Text;
 
 
-
-while (true)
+namespace ImgToAscii
 {
-    Console.WriteLine("Enter filename, press enter for default: ");
-
-    string input = Console.ReadLine();
-    if (input == "")
+    class Program
     {
-        Console.WriteLine("Choosing duck image");
-        input = "Duck.bmp";
-    }
-    else
-    {
-        if (!File.Exists(path+@$"\{input}")) {
-            Console.WriteLine("Error File Not Found!");
-            continue;
-        }
-
-    }
-  
-    Bitmap image = new Bitmap($"{path}/{input}");
-
-
-    Console.WriteLine("Enter a resolution:");
-    string res = Console.ReadLine();
-    int resolution = 32;
-    try
-    {
-        resolution = int.Parse(res);
-        if (resolution > image.Width || resolution > image.Height) {
-            Console.WriteLine("Invalid resoution! Resolution is bigger than image size!");
-            continue;
-        }
-    }
-    catch (FormatException)
-    {
-        Console.WriteLine("Invalid Resolution! Using default of " + resolution);
-    }
-
-    Dictionary<float, char> lumToChar = new Dictionary<float, char>() {
-    {0f,' '},
-    {0.2f,','},
-    {0.4f,'+'},
-    {0.6f,'&' },
-    {0.8f,'#'},
-    {1f, '■'}
-    };
-
-
-    void ShowImgInConsole(Bitmap img)
-    {
-        for (int i = 0; i < img.Height; i += img.Height / resolution)
+        static void Main(string[] args)
         {
-            for (int j = 0; j < img.Width; j += img.Height / resolution)
+            int res = 32;
+            ShowMenu(res, 5,"jonas",3);
+            Console.ReadLine();
+            ShowMenu(res, 5, "Duck", 100);
+        }
+
+        static void ShowMenu(int width, int height, string name, int health)
+        {
+            ShowImage(name+".bmp", width);
+
+            StringBuilder sb = new StringBuilder();
+            //Top line
+            sb.Append('|');
+            for (int i = 0; i < width * 2; i++)
             {
-                Color color = img.GetPixel(j, i);
-                float luminance = color.GetBrightness();
-                float roundedLum = (float)Math.Round(luminance / 0.2f) * 0.2f;
-                if (lumToChar.TryGetValue(roundedLum, out char value))
+                sb.Append("^");
+            }
+            sb.Append("|\n");
+
+            //Black magic for showing name and health
+            string name_ = " NAME: "+name;
+            string health_ = " HEALTH: "+health;
+            sb.Append("¦" + name_+health_.PadLeft(width*2-name_.Length-1)+ " ¦" + "\n");
+
+            //Bottom line
+            sb.Append('|');
+            for (int i = 0; i < width*2; i++)
+            {
+                sb.Append('.');
+            }
+            sb.Append("|\n");
+
+
+            Console.Write(sb);
+        }
+        static void ShowImage(string name, int resolution)
+        {
+
+            Dictionary<float, char> lumToChar = new Dictionary<float, char>() {
+                {0.0f,' '},
+                {0.2f,','},
+                {0.4f,'+'},
+                {0.6f,'&'},
+                {0.8f,'#'},
+                {1.0f,'■'}
+            };
+            string images = Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\Images");
+            StringBuilder sb = new StringBuilder();
+            Bitmap img = new Bitmap($"{images}/{name}"); ;
+            int resX = img.Width / resolution;
+            int resY = img.Height / resolution;
+            for (int i = 0; i < img.Height; i += resY)
+            {
+                sb.Append('\n');
+                for (int j = 0; j < img.Width; j += resX)
                 {
-                    Console.Write($" {value}");
-                }
-                else
-                {
-                    Console.Write(' ');
+                    Color color = img.GetPixel(j, i);
+                    float luminance = color.GetBrightness();
+                    float roundedLum = (float)Math.Round(luminance / 0.2f) * 0.2f;
+                    if (lumToChar.TryGetValue(roundedLum, out char value))
+                    {
+                        sb.Append($" {value}");
+                    }
                 }
             }
-            Console.WriteLine();
+            Console.WriteLine(sb);
         }
-        Console.WriteLine(input) ;
     }
-
-    ShowImgInConsole(image);
 }
