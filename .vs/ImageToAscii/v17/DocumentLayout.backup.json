@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\ImageToAscii\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1A090C64-8D00-4914-B88A-C8C2BB17A63F}|ImageToAscii\\ImageToAscii.csproj|c:\\imagetoascii\\imagetoascii\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A090C64-8D00-4914-B88A-C8C2BB17A63F}|ImageToAscii\\ImageToAscii.csproj|solutionrelative:imagetoascii\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1A090C64-8D00-4914-B88A-C8C2BB17A63F}|ImageToAscii\\ImageToAscii.csproj|c:\\imagetoascii\\imagetoascii\\buttongame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A090C64-8D00-4914-B88A-C8C2BB17A63F}|ImageToAscii\\ImageToAscii.csproj|solutionrelative:imagetoascii\\buttongame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A090C64-8D00-4914-B88A-C8C2BB17A63F}|ImageToAscii\\ImageToAscii.csproj|c:\\imagetoascii\\imagetoascii\\imagetoascii.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{1A090C64-8D00-4914-B88A-C8C2BB17A63F}|ImageToAscii\\ImageToAscii.csproj|solutionrelative:imagetoascii\\imagetoascii.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{1A090C64-8D00-4914-B88A-C8C2BB17A63F}|ImageToAscii\\ImageToAscii.csproj|c:\\imagetoascii\\imagetoascii\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A090C64-8D00-4914-B88A-C8C2BB17A63F}|ImageToAscii\\ImageToAscii.csproj|solutionrelative:imagetoascii\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,26 +23,48 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ImageToAscii.csproj",
-              "DocumentMoniker": "C:\\ImageToAscii\\ImageToAscii\\ImageToAscii.csproj",
-              "RelativeDocumentMoniker": "ImageToAscii\\ImageToAscii.csproj",
-              "ToolTip": "C:\\ImageToAscii\\ImageToAscii\\ImageToAscii.csproj",
-              "RelativeToolTip": "ImageToAscii\\ImageToAscii.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-05T20:15:29.037Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\ImageToAscii\\ImageToAscii\\Program.cs",
               "RelativeDocumentMoniker": "ImageToAscii\\Program.cs",
               "ToolTip": "C:\\ImageToAscii\\ImageToAscii\\Program.cs",
               "RelativeToolTip": "ImageToAscii\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-03T18:30:22.984Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "0cbaba21-6ddf-4c50-8e57-e196517ac335",
+        "Display": 0,
+        "X": 1248,
+        "Y": 125,
+        "Width": 938,
+        "Height": 1134,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ButtonGame.cs",
+              "DocumentMoniker": "C:\\ImageToAscii\\ImageToAscii\\ButtonGame.cs",
+              "RelativeDocumentMoniker": "ImageToAscii\\ButtonGame.cs",
+              "ToolTip": "C:\\ImageToAscii\\ImageToAscii\\ButtonGame.cs",
+              "RelativeToolTip": "ImageToAscii\\ButtonGame.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAgwCcAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T21:21:36.034Z",
               "EditorCaption": ""
             }
           ]

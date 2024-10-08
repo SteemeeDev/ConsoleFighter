@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ImageToAscii")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+be2a030dd87c6c31c39a3db33929058e3ec2f28f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f3616b1050314586c99ed9d41799848a1a61b350")]
 [assembly: System.Reflection.AssemblyProductAttribute("ImageToAscii")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ImageToAscii")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

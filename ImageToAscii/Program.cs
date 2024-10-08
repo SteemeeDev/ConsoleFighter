@@ -6,11 +6,13 @@ namespace ImgToAscii
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main()
         {
             int res = 32;
             ShowMenu(res, 5,"jonas",3);
-            Console.ReadLine();
+            ButtonGame a = new ButtonGame();
+            await a.pressKey('a', 3000);
+            await a.pressKey('b', 2000);
             ShowMenu(res, 5, "Duck", 100);
         }
 
@@ -45,7 +47,6 @@ namespace ImgToAscii
         }
         static void ShowImage(string name, int resolution)
         {
-
             Dictionary<float, char> lumToChar = new Dictionary<float, char>() {
                 {0.0f,' '},
                 {0.2f,','},
