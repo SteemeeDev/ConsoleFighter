@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ImageToAscii
-build_property.ProjectDir = C:\ImageToAscii\ImageToAscii\
+build_property.ProjectDir = C:\Users\biscu\source\repos\imgtoascii\ImageToAscii\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
