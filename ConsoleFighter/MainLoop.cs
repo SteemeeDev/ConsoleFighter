@@ -195,6 +195,9 @@ class MainLoop
         }
 
         //Finished game
+        Console.SetCursorPosition(25, 33);
+        Console.Write("You beat the game!");
+        Console.SetCursorPosition(0,0);
         while (true)
         {
             for (int i = 0; i < 14; i++)
