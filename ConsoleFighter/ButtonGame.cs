@@ -57,7 +57,7 @@ class ButtonGame
             }
             else
             {
-                Console.WriteLine("Some error shit happened idk async programming is hard!");
+                Console.WriteLine("Some error happened idk async programming is hard!");
                 return 0;
             }
 
@@ -96,6 +96,7 @@ class ButtonGame
 
     public void ShowImage(string name, int resolution)
     {
+        //Dictionary med luminance værdier, som korresponderer til en ascii karakter
         Dictionary<float, char> lumToChar = new Dictionary<float, char>() {
             {0.0f,' '},
             {0.2f,','},
@@ -104,18 +105,28 @@ class ButtonGame
             {0.8f,'#'},
             {1.0f,'■'}
         };
+
+        //Find image path
         string images = Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\Images");
+        //Jeg bruger en stringbuilder, og bruger kun 1 draw call så det er hurtigere
         StringBuilder sb = new StringBuilder();
+        //Vi finder det givne bitmap billede
         Bitmap img = new Bitmap($"{images}/{name}.bmp"); ;
+        //Vi skipper nogle pixels så billedet passer i konsollen
         int resX = img.Width / resolution;
         int resY = img.Height / resolution;
+        /// Her looper vi gennem hver x-ende pixel i billedet, 
+        /// regner pixel'ens brightness og bruger vores dictionary
+        /// til at lookup den givne ascii karakter
         for (int i = 0; i < img.Height; i += resY)
         {
             sb.Append('\n');
             for (int j = 0; j < img.Width; j += resX)
             {
                 Color color = img.GetPixel(j, i);
+                // Brightness af en pixel giver en værdi mellem 0 og 1 som beskriver hvor lys pixellen er 
                 float luminance = color.GetBrightness();
+                // Vi runder brightness værdien til nærmeste 0.2'er så den passer til dictionary'et
                 float roundedLum = (float)Math.Round(luminance / 0.2f) * 0.2f;
                 if (lumToChar.TryGetValue(roundedLum, out char value))
                 {
@@ -123,6 +134,7 @@ class ButtonGame
                 }
             }
         }
+        // Til sidst printer vi vores billede
         Console.WriteLine(sb);
     }
 

@@ -113,8 +113,12 @@ class MainLoop
             Console.ReadLine();
 
             int dmg = await game.pressKey('q', 1000, 2);
-            if (dmg > 0) { duck.health -= dmg; }
-            else { playerHealth += dmg; }
+            if (dmg > 0) {
+                duck.health -= dmg; 
+            }
+            else { 
+                playerHealth += dmg; 
+            }
 
             dmg = await game.pressKey('w', 1000, 2);
             if (dmg > 0) { duck.health -= dmg; }
