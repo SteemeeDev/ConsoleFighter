@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ConsoleFighter": {
+      "commandName": "Project",
+      "hotReloadEnabled": false
+    }
+  }
+}

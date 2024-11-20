@@ -10,6 +10,8 @@ class ButtonGame
     {
         Console.ForegroundColor = ConsoleColor.White;
         Console.WriteLine($"Press the \u001b[0;96m{targetKey}\u001b[97m key within {timeLimit} milliseconds");
+        bool hitKey = false;
+
         using (var cts = new CancellationTokenSource())
         {
             Task Delay = Task.Delay(timeLimit, cts.Token);
@@ -25,8 +27,8 @@ class ButtonGame
                             Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine($"You did {damage} damage!");
                             Console.ForegroundColor = ConsoleColor.White;
+                            hitKey = true;
                             cts.Cancel();
-                            return true;
                         }
 
                         if (!Delay.IsCompleted)
@@ -44,11 +46,11 @@ class ButtonGame
             Task completed = await Task.WhenAny(getKey, Delay);
 
 
-            if (completed == getKey && getKey.Result)
+            if (hitKey == true)
             {
                 return damage;
             }
-            else if (completed == Delay)
+            else if (hitKey == false)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"You missed the key and took damage!");
