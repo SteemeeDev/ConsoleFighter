@@ -7,6 +7,8 @@ class MainLoop
     
     static async Task Main()
     {
+        Console.SetBufferSize(Console.BufferWidth + 12, Console.BufferHeight + 12);
+        Console.SetWindowSize(66, 48);
         //Starting values
         int playerHealth = 10;
         ButtonGame game = new();
@@ -197,7 +199,6 @@ class MainLoop
 
             await game2();
         }
-
         //Finished game
         Console.SetCursorPosition(25, 33);
         Console.Write("You beat the game!");
