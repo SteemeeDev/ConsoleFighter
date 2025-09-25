@@ -7,12 +7,13 @@ class MainLoop
     
     static async Task Main()
     {
-        Console.SetBufferSize(Console.BufferWidth + 12, Console.BufferHeight + 12);
-        Console.SetWindowSize(66, 48);
+        Console.SetBufferSize(128, 128);
+        Console.SetWindowSize(66, 48);  
+
         //Starting values
         int playerHealth = 10;
         ButtonGame game = new();
-
+        
         // Game 1, Jonas the destroyer
         Enemy jonas = new Enemy("Jonas The Destroyer", 10, "The weakest enemy");
         await game1();
@@ -21,7 +22,7 @@ class MainLoop
             int enemyStartHealth = jonas.health;
             int playerStartHealth = playerHealth;
 
-            game.ShowImage("Jonas", 32);
+            Console.WriteLine(game.ShowImage("Jonas", 32));
             game.ShowMenu(32, 5, jonas.name, jonas.health, jonas.lore);
 
             Console.WriteLine("A wild jonas approaches!");
@@ -62,7 +63,7 @@ class MainLoop
             enemyStartHealth = jonas.health;
             playerStartHealth = playerHealth;
 
-            game.ShowImage("Jonas", 32);
+            Console.WriteLine(game.ShowImage("Jonas", 32));
             game.ShowMenu(32, 5, jonas.name, jonas.health, jonas.lore);
             Console.WriteLine("Press enter to start fight...");
             Console.ReadLine();
@@ -107,7 +108,7 @@ class MainLoop
             int enemyStartHealth = duck.health;
             int playerStartHealth = playerHealth;
 
-            game.ShowImage("Duck", 32);
+            Console.WriteLine(game.ShowImage("Duck", 32));
             game.ShowMenu(32, 5, duck.name, duck.health, duck.lore);
 
             Console.WriteLine("You feel a shiver down your spine");
@@ -145,7 +146,9 @@ class MainLoop
             game.showFightSummary(enemyStartHealth, duck.health, playerStartHealth, playerHealth);
             if (game.checkPlrHealth(playerHealth))
             {
-                await Main();
+                playerHealth = playerStartHealth;
+                duck.health = enemyStartHealth;
+                await game2();
             }
             if (game.checkEnemyHealth(duck.health))
             {
@@ -160,7 +163,7 @@ class MainLoop
             enemyStartHealth = duck.health;
             playerStartHealth = playerHealth;
 
-            game.ShowImage("Duck", 32);
+            Console.WriteLine(game.ShowImage("Duck", 32));
             game.ShowMenu(32, 5, duck.name, duck.health, duck.lore);
 
             Console.WriteLine("Hint: Next pattern is d f j k");
@@ -187,7 +190,9 @@ class MainLoop
             game.showFightSummary(enemyStartHealth, duck.health, playerStartHealth, playerHealth);
             if (game.checkPlrHealth(playerHealth))
             {
-                await Main();
+                playerHealth = playerStartHealth;
+                duck.health = enemyStartHealth;
+                await game2();
             }
             if (game.checkEnemyHealth(duck.health))
             {
@@ -199,18 +204,21 @@ class MainLoop
 
             await game2();
         }
+
+        
         //Finished game
-        Console.SetCursorPosition(25, 33);
-        Console.Write("You beat the game!");
         Console.SetCursorPosition(0,0);
         while (true)
         {
             for (int i = 0; i < 14; i++)
             {
-                game.ShowImage($@"firework\{i}", 32);
+                Console.Write(game.ShowImage($@"firework\{i}", 32));
+                Console.SetCursorPosition(25, 33);
+                Console.Write("You beat the game!");
                 Thread.Sleep(200);
                 Console.SetCursorPosition(0, 0);
             }
+            
         }
 
 

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Drawing;
 using System.Text;
-using System.Threading.Tasks;
 
 
 class ButtonGame
 {
     public async Task<int> pressKey(char targetKey, int timeLimit, int damage)
     {
+
         Console.ForegroundColor = ConsoleColor.White;
         Console.WriteLine($"Press the \u001b[0;96m{targetKey}\u001b[97m key within {timeLimit} milliseconds");
         bool hitKey = false;
@@ -96,7 +96,7 @@ class ButtonGame
         Console.Write(sb);
     }
 
-    public void ShowImage(string name, int resolution)
+    public string ShowImage(string name, int resolution)
     {
         //Dictionary med luminance værdier, som korresponderer til en ascii karakter
         Dictionary<float, char> lumToChar = new Dictionary<float, char>() {
@@ -122,7 +122,6 @@ class ButtonGame
         /// til at lookup den givne ascii karakter
         for (int i = 0; i < img.Height; i += resY)
         {
-            sb.Append('\n');
             for (int j = 0; j < img.Width; j += resX)
             {
                 Color color = img.GetPixel(j, i);
@@ -135,9 +134,10 @@ class ButtonGame
                     sb.Append($" {value}");
                 }
             }
+            sb.Append('\n');
         }
         // Til sidst printer vi vores billede
-        Console.WriteLine(sb);
+        return sb.ToString();
     }
 
     public void showFightSummary(int enemyStartHealth, int enemyHealth, int playerStartHealth, int playerHealth)
@@ -171,7 +171,6 @@ class ButtonGame
         if (enemyHealth <= 0)
         {
             Console.WriteLine("You won!");
-            Thread.Sleep(1000);
             Console.WriteLine("Press enter to go to next stage...");
             Console.ReadLine();
             Console.Clear();
